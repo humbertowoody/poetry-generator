@@ -1,6 +1,5 @@
 export const buildMarkovChain = (text: string) => {
   const words: string[] = text.split(/\s+/);
-  console.log(`words for markov chain: ${words}`);
   const markovChain: { [key: string]: { [key: string]: number } } = {};
 
   for (let i = 0; i < words.length - 1; i++) {
@@ -27,11 +26,8 @@ export const generatePoem = (
   let poem = word;
 
   for (let i = 0; i < length - 1; i++) {
-    console.log(word);
     const nextWords = chain[word];
-    console.log(nextWords);
     const nextWord = chooseNextWord(nextWords);
-    console.log(nextWord);
     poem += " " + nextWord;
     word = nextWord;
     if (!chain[word]) {
@@ -41,10 +37,6 @@ export const generatePoem = (
       break;
     }
   }
-
-  console.log(poem);
-  console.log(`length: ${poem.split(/\s+/).length}`);
-  console.log(`length (expected): ${length}`);
 
   // Capitalize the first letter of the poem
   poem = poem.charAt(0).toUpperCase() + poem.slice(1);

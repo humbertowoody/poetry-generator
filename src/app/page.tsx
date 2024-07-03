@@ -59,7 +59,7 @@ const Home = () => {
         </>
       )}
 
-      <footer className="mt-auto text-center text-sm text-gray-500 border-t pt-4">
+      <footer className="mt-auto text-center text-sm border-t pt-4">
         <p>
           Made with ❤️ by{" "}
           <a

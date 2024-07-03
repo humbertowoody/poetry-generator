@@ -5,6 +5,10 @@ import * as d3 from "d3";
 const Graph = ({ data }: { data: any }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 
+  const isDarkMode =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   useEffect(() => {
     const height = 600;
 
@@ -84,6 +88,7 @@ const Graph = ({ data }: { data: any }) => {
       .append("text")
       .attr("dx", 12)
       .attr("dy", ".35em")
+      .attr("fill", isDarkMode ? "white" : "black")
       .text((d) => d.id || "(end of input poem)");
 
     simulation.nodes(nodes).on("tick", ticked);
