@@ -48,8 +48,10 @@ const Heatmap = ({ matrix }) => {
       .attr("transform", `translate(0,${height})`)
       .call(d3.axisBottom(x))
       .selectAll("text")
-      .attr("transform", "rotate(-45)")
+      .attr("transform", "rotate(-90)")
       .style("text-anchor", "end")
+      .attr("dy", "-0.6em")
+      .attr("dx", "-0.8em")
       .style("fill", isDarkMode ? "white" : "black");
 
     // Add Y axis
